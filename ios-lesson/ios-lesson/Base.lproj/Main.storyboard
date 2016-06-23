@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_lesson" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFu-wr-VJX">
+                                <rect key="frame" x="88" y="24" width="492" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yvx-iX-JTi">
+                                <rect key="frame" x="88" y="90" width="492" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFX-Ud-00F">
+                                <rect key="frame" x="20" y="28" width="33" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBM-aL-lFI">
+                                <rect key="frame" x="20" y="94" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfr-o4-aws">
+                                <rect key="frame" x="231" y="154" width="139" height="30"/>
+                                <state key="normal" title="Save Value in iCloud"/>
+                                <connections>
+                                    <action selector="saveIniCloudHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEc-dS-jxr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IBM-aL-lFI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="4Il-jV-YTD"/>
+                            <constraint firstItem="pfr-o4-aws" firstAttribute="top" secondItem="yvx-iX-JTi" secondAttribute="bottom" constant="34" id="A8E-Hc-PeY"/>
+                            <constraint firstItem="yvx-iX-JTi" firstAttribute="width" secondItem="UFu-wr-VJX" secondAttribute="width" id="D2D-Bv-8Uq"/>
+                            <constraint firstItem="yvx-iX-JTi" firstAttribute="centerY" secondItem="IBM-aL-lFI" secondAttribute="centerY" id="Eiq-3i-USF"/>
+                            <constraint firstItem="bFX-Ud-00F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="FAM-ns-1dt"/>
+                            <constraint firstItem="UFu-wr-VJX" firstAttribute="leading" secondItem="bFX-Ud-00F" secondAttribute="trailing" constant="35" id="Gvs-Ot-fb8"/>
+                            <constraint firstItem="bFX-Ud-00F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Ida-t2-OJZ"/>
+                            <constraint firstItem="UFu-wr-VJX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MnZ-ry-sgg"/>
+                            <constraint firstItem="UFu-wr-VJX" firstAttribute="centerY" secondItem="bFX-Ud-00F" secondAttribute="centerY" identifier="key" id="Qom-E8-2fb"/>
+                            <constraint firstAttribute="trailing" secondItem="yvx-iX-JTi" secondAttribute="trailing" constant="20" symbolic="YES" id="gUj-1g-8eS"/>
+                            <constraint firstItem="pfr-o4-aws" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lo5-WO-B4w"/>
+                            <constraint firstItem="IBM-aL-lFI" firstAttribute="top" secondItem="bFX-Ud-00F" secondAttribute="bottom" constant="45" id="mcq-P2-cfJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="keyUTF" destination="UFu-wr-VJX" id="EKU-Yj-ihX"/>
+                        <outlet property="valueUTF" destination="yvx-iX-JTi" id="l8l-Jh-B4V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="400"/>
+        </scene>
+    </scenes>
+</document>
