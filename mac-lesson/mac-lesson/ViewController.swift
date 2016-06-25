@@ -5,6 +5,16 @@
 //  Created by Ajay Thakur on 6/21/16.
 //  Copyright © 2016 Ajay Thakur. All rights reserved.
 //
+/// @discussion This is an example using iCloud between two apps Mac and IOS.
+/// @discussion This is Mac implementation. The methods in this VC are:
+/// @discussion    -- User enters two variables in 'keyNTF: NSTextField' and
+/// @discussion    -- 'valueNTF: NSTextField' Then user prsses the button and
+/// @discussion    -- '@IBAction func saveIniCloudHandler' gets called
+/// @discussion Methods in the class:
+/// @discussion    -- 'saveIniCloudHandler': Saves variables in iCloud handlers
+/// @discussion    -- 'updateItemsFromiCloud': Handles when notified that the iCloud us changed.
+/// @discussion    -- 'initFromiCloudKV': Initializes values from iCloud.
+///
 
 import Cocoa
 
@@ -23,7 +33,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupiCloudKV()
+        initFromiCloudKV()
     }
 
     override var representedObject: AnyObject? {
@@ -32,12 +42,15 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         }
     }
 
+    ///
     /// Comments guidline: http://www.appcoda.com/documenting-source-code-in-xcode/
     /// @brief func saveIniCloudHandler(sender: NSButton)
+    ///
     /// @param sender: NSButton
+    ///
     /// @discussion THis is invoked when user presses button on Mac Store.
     /// @discussion Saves data in iCloud 'NSUbiquitousKeyValueStore' and
-    /// @discussion Local storage -- NSUserDefaults
+    /// @discussion in local storage -- NSUserDefaults
     ///
     @IBAction func saveIniCloudHandler(sender: NSButton) {
         let keyValueFromUX = keyNTF.stringValue
@@ -54,7 +67,13 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     ///
-    /// @discussion Notification
+    /// @discussion Handles notifications when the values in iCloud have changed.
+    /// 
+    /// @param: notification: NSNotification Dictionary containing changes snapshot.
+    ///
+    /// @discussion If there is notification 'NSUbiquitousKeyValueStoreDidChangeExternallyNotification'
+    /// @discussion extract the data and use it.
+    /// @discussion
     ///
     func updateItemsFromiCloud(notification: NSNotification) {
         // What changed.
@@ -82,7 +101,16 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
     }
     
-    func setupiCloudKV() {
+    ///
+    /// @discussion Handles notifications when the values in iCloud have changed.
+    ///
+    /// @param: None
+    ///
+    /// @discussion Register for 'NSUbiquitousKeyValueStoreDidChangeExternallyNotification'
+    /// @discussion Synchronize the NSUbiquitousKeyValueStore
+    /// @discussion Read stored values
+    ///
+    func initFromiCloudKV() {
         // Setup the KV iCloud store
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(ViewController.updateItemsFromiCloud(_:)),
@@ -116,7 +144,13 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         NSLog("NSU: Key:\(keyValueInNSU) Value:\(valueValueInNSU)")
     }
     
-    // Save the values changed
+ 
+    ///
+    /// function keyValuesChanged: helper method to extract and save the desired string values.
+    ///
+    /// @param: key:NSString name of the key that changed
+    /// @param: value:NSString the new value that changed
+    ///
     func keyValuesChanged(key:NSString, value:NSString) {
         let prefs = NSUserDefaults.standardUserDefaults()
         switch key {
