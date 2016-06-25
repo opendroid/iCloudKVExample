@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7450A3B61D1EE88800F07609 /* AppDataStore.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7450A3B51D1EE88800F07609 /* AppDataStore.plist */; };
 		7455EEC21D1A29F4002F9F43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7455EEC11D1A29F4002F9F43 /* AppDelegate.swift */; };
 		7455EEC41D1A29F4002F9F43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7455EEC31D1A29F4002F9F43 /* ViewController.swift */; };
 		7455EEC61D1A29F4002F9F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7455EEC51D1A29F4002F9F43 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7450A3B51D1EE88800F07609 /* AppDataStore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppDataStore.plist; sourceTree = "<group>"; };
 		7455EEBE1D1A29F4002F9F43 /* mac-lesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mac-lesson.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7455EEC11D1A29F4002F9F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7455EEC31D1A29F4002F9F43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				7455EEC51D1A29F4002F9F43 /* Assets.xcassets */,
 				7455EEC71D1A29F4002F9F43 /* Main.storyboard */,
 				7455EECA1D1A29F4002F9F43 /* Info.plist */,
+				7450A3B51D1EE88800F07609 /* AppDataStore.plist */,
 			);
 			path = "mac-lesson";
 			sourceTree = "<group>";
@@ -194,6 +197,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 489DFKYAU5;
 						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -235,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7455EEC61D1A29F4002F9F43 /* Assets.xcassets in Resources */,
+				7450A3B61D1EE88800F07609 /* AppDataStore.plist in Resources */,
 				7455EEC91D1A29F4002F9F43 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

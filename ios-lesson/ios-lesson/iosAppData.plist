@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Aiden Thakur</string>
+	<key>Phone Number</key>
+	<string>+1 (408) 666-8217</string>
+	<key>Company</key>
+	<string>Fire Strom Inc</string>
+	<key>Address</key>
+	<dict>
+		<key>Street</key>
+		<string>Remington Drive</string>
+		<key>State</key>
+		<string>CA</string>
+		<key>City</key>
+		<string>Sunnyvale</string>
+		<key>Unit Number</key>
+		<string>910</string>
+	</dict>
+	<key>Contributers</key>
+	<array>
+		<string>Chinmay Bansal</string>
+		<string>Aditya Bansal</string>
+		<string>Ajay Thakur</string>
+		<string>Sofia Thakur</string>
+	</array>
+</dict>
+</plist>

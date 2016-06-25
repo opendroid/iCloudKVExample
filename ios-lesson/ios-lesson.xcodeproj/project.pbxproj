@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7450A3B81D1F03E000F07609 /* iosAppData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7450A3B71D1F03E000F07609 /* iosAppData.plist */; };
 		7455EE881D1A29A8002F9F43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7455EE871D1A29A8002F9F43 /* AppDelegate.swift */; };
 		7455EE8A1D1A29A8002F9F43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7455EE891D1A29A8002F9F43 /* ViewController.swift */; };
 		7455EE8D1D1A29A8002F9F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7455EE8B1D1A29A8002F9F43 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7450A3B71D1F03E000F07609 /* iosAppData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iosAppData.plist; sourceTree = "<group>"; };
 		7455EE841D1A29A8002F9F43 /* ios-lesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-lesson.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7455EE871D1A29A8002F9F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7455EE891D1A29A8002F9F43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				7455EE8E1D1A29A8002F9F43 /* Assets.xcassets */,
 				7455EE901D1A29A8002F9F43 /* LaunchScreen.storyboard */,
 				7455EE931D1A29A8002F9F43 /* Info.plist */,
+				7450A3B71D1F03E000F07609 /* iosAppData.plist */,
 			);
 			path = "ios-lesson";
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7450A3B81D1F03E000F07609 /* iosAppData.plist in Resources */,
 				7455EE921D1A29A8002F9F43 /* LaunchScreen.storyboard in Resources */,
 				7455EE8F1D1A29A8002F9F43 /* Assets.xcassets in Resources */,
 				7455EE8D1D1A29A8002F9F43 /* Main.storyboard in Resources */,

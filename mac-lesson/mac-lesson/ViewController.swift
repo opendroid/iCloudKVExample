@@ -34,6 +34,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
         // Do any additional setup after loading the view.
         initFromiCloudKV()
+        initMyPropertyList()
     }
 
     override var representedObject: AnyObject? {
@@ -164,6 +165,59 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             // None
         }
         NSLog("keyValuesChanged: Key:\(key) Value:\(value)")
+    }
+    
+    ///
+    /// @description Reads the property list file [in XML] and converts to Dictionary
+    /// function initMyPropertyList: Read the AppDataStore.plist
+    /// @param   None
+    ///
+    /// @brief here is how the data is stores in XML
+    //    <?xml version="1.0" encoding="UTF-8"?>
+    //    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    //    <plist version="1.0">
+    //      <dict>
+    //          <key>Name</key>
+    //          <string>Ajay Thakur</string>
+    //          <key>Company</key>
+    //          <string>Finny Inc</string>
+    //          <key>Phone Number</key>
+    //          <string>+1 (408) 406-6275</string>
+    //          <key>Address</key>
+    //          <dict>
+    //              <key>Street</key>
+    //              <string>Remingtom Drive</string>
+    //              <key>Unit Number</key>
+    //              <string>910</string>
+    //              <key>City</key>
+    //              <string>Sunnyvale</string>
+    //              <key>State</key>
+    //              <string>CA</string>
+    //              </dict>
+    //          <key>Contributers</key>
+    //          <array>
+    //              <string>Ajay Thakur</string>
+    //              <string>Navneet Bansal</string>
+    //              <string>Alex Bush</string>
+    //              <string>Chris Gandolfo</string>
+    //          </array>
+    //      </dict>
+    //    </plist>
+    //
+    // Paths of these files on Mac
+    // $HOME/Library/Developer/Xcode/DerivedData/icloudExercise1-aahrjwvwbmzqqsafivskzdvbregg/Build/Products/Debug/mac-lesson.app/Contents/Resources/AppDataStore.plist
+    func initMyPropertyList () {
+        if let path:String = NSBundle.mainBundle().pathForResource("AppDataStore", ofType: "plist") {
+            NSLog("App property list  \(path)")
+            if let xmlData = NSFileManager.defaultManager().contentsAtPath(path) {
+                /// @description change XML to Dictionary
+                // Note on usage of try! i.e. disables error propogation
+                // Because "AppDataStore.plist" is packaged we wont get any error.
+                //
+                let data = try! NSPropertyListSerialization.propertyListWithData(xmlData, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil)
+                NSLog("Dictionary: \(data)!")
+            } // End valid xmlData
+        } // End valid path
     }
     
 }

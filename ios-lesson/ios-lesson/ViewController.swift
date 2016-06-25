@@ -29,7 +29,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var valueValueIniCloud: String  = "" // Value in iCloud
     var valueValueInNSU: String  = ""  // Value in NSU
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,14 +37,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // Setup iCloud values
         setupiCloudKV()
+        initMyPropertyList()
     }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     func textFieldDidEndEditing(textField: UITextField) {
         switch textField.tag {
@@ -176,5 +174,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
         NSLog("iCloud: Key:\(keyValueIniCloud) Value:\(valueValueIniCloud)")
         NSLog("NSU: Key:\(keyValueInNSU) Value:\(valueValueInNSU)")
     }
+    
+    ///
+    /// @description Reads the property list file [in XML] and converts to Dictionary
+    /// function initMyPropertyList: Read the iosAppData
+    /// @param   None
+    ///
+    // Path of these files in IOS
+    // Simulator: $HOME/Library/Developer/CoreSimulator/Devices/48DA72F1-6C86-43D5-952C-1DBF99BA2629/data/Containers/Bundle/Application/
+    // iPhone: /var/containers/Bundle/Application/207DCC6E-9192-4C56-AAA8-D6523FC17EA3/ios-lesson.app/iosAppData.plist
+    
+
+    func initMyPropertyList () {
+        if let path:String = NSBundle.mainBundle().pathForResource("iosAppData", ofType: "plist") {
+            NSLog("App property list  \(path)")
+            if let xmlData = NSFileManager.defaultManager().contentsAtPath(path) {
+                /// @description change XML to Dictionary
+                // Note on usage of try! i.e. disables error propogation
+                // Because "AppDataStore.plist" is packaged we wont get any error.
+                //
+                let data = try! NSPropertyListSerialization.propertyListWithData(xmlData, options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves, format: nil)
+                NSLog("Dictionary: \(data)!")
+            } // End valid xmlData
+        } // End valid path
+    }
+    
 }
 

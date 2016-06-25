@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Ajay Thakur</string>
+	<key>Company</key>
+	<string>Finny Inc</string>
+	<key>Phone Number</key>
+	<string>+1 (408) 406-6275</string>
+	<key>Address</key>
+	<dict>
+		<key>Street</key>
+		<string>Remingtom Drive</string>
+		<key>Unit Number</key>
+		<string>910</string>
+		<key>City</key>
+		<string>Sunnyvale</string>
+		<key>State</key>
+		<string>CA</string>
+	</dict>
+	<key>Contributers</key>
+	<array>
+		<string>Ajay Thakur</string>
+		<string>Navneet Bansal</string>
+		<string>Alex Bush</string>
+		<string>Chris Gandolfo</string>
+	</array>
+</dict>
+</plist>
